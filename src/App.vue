@@ -16,23 +16,6 @@ function makeBackgroundOrange() {
 }
 
 
-
-// test for access sidebar
-//   document.addEventListener("DOMContentLoaded", function() { 
-//   const side = document.getElementById("sidebar");
-//   console.log(side);
-//   side.style.background = "gray";
-// });
-
-// test for access main text innerHTML not working
-//   document.addEventListener("DOMContentLoaded", function() { 
-//   const main = document.getElementById("main");
-//   console.log(main)
-//   main.style.background = "gray"
-//   main.innerHTML = textInput
-// });
-
-
 // main text adding 
 const mainTxt = ref("");
 const textInput = ref("");
@@ -47,17 +30,9 @@ const colorMain = ref("")
 const colorInput = ref("");
 const divNameInput = ref("")
 var changecolor = null
-// document.addEventListener("DOMContentLoaded", function() { 
 
-
-// function changemaincolor() {
-//     console.log(divNameInput.value)
-//     let mySelectedDiv = document.getElementById(divNameInput.value)
-//     mySelectedDiv.style.backgroundColor = colorInput.value
-// }
-// });
-
-
+// using this function to insure the DOM is loaded before fire the fuction . 
+// also the function syntax is diffrent 
 onMounted(() => {
     changecolor = () =>{
         let mySelectedDiv = document.getElementById(divNameInput.value)
@@ -65,15 +40,6 @@ onMounted(() => {
     };
 
 })
-
-// this one not working the function to be written in this way
-// onMounted(() => {
-//     function changemaincolor (){
-//         let mySelectedDiv = document.getElementById(divNameInput.value)
-//         mySelectedDiv.style.background = colorInput.value
-//     };
-
-// })
 
 
 </script>
@@ -84,12 +50,15 @@ onMounted(() => {
 <template>
 
 <div id="navbar" class="container">  
-        <div id="title">Abdulrahman alhabib CBDM assignment 02</div>
+        <div id="title">
+            Abdulrahman alhabib CBDM assignment 02
+        </div>
     </div>
 
     <div id="flex">
         <div id="sidebar" class="container"> Sidebar 
             <br/>
+            <h3> change color background! </h3>
             <button @click="makeBackgroundWhite">
                 white background
             </button>
@@ -97,17 +66,21 @@ onMounted(() => {
             <button @click="makeBackgroundOrange">
                 orange background
             </button>
-
             <br/>
+            <br/>
+            <br/>
+            <h3> infinity text adding </h3>
             <input v-model="textInput" type="text" placeholder="write here!">
             <br/>
             <button @click="addToMainTxt">
                 add To Main Txt
             </button>
             <br/>
-            <input v-model="divNameInput" type="text" placeholder="main/sidebar/navbar">
             <br/>
-            only write one of : main / sidebar / navbar
+            <br/>
+            <h3>change specific box</h3>
+            <h5>main / sidebar / navbar</h5>
+            <input v-model="divNameInput" type="text" placeholder="main/sidebar/navbar">
             <br/>
             <input v-model="colorInput" type="text" placeholder="write color here!">
             <br/>
@@ -117,7 +90,7 @@ onMounted(() => {
 
 
         </div>
-        <div id="main" class="container" :style="{ backgroundColor: colorMain }"> main
+        <div id="main" class="container" > main
             <br/>
             {{mainTxt}} </div>
     </div>
