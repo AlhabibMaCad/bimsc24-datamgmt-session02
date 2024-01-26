@@ -1,6 +1,6 @@
 <!-- the script is where the js code goes -->
-<script setup defer>
-import { ref } from "vue" // you need this to use ref()
+<script setup>
+import { onMounted, ref } from "vue" // you need this to use ref()
 
   //Change background color
   const doc = document.documentElement;
@@ -16,12 +16,13 @@ function makeBackgroundOrange() {
 }
 
 
+
 // test for access sidebar
-  document.addEventListener("DOMContentLoaded", function() { 
-  const side = document.getElementById("sidebar");
-  console.log(side);
+//   document.addEventListener("DOMContentLoaded", function() { 
+//   const side = document.getElementById("sidebar");
+//   console.log(side);
 //   side.style.background = "gray";
-});
+// });
 
 // test for access main text innerHTML not working
 //   document.addEventListener("DOMContentLoaded", function() { 
@@ -42,11 +43,37 @@ function addToMainTxt() {
 
 
 // coloring 
-const colorMain = ref("");
+const colorMain = ref("")
 const colorInput = ref("");
-function changemaincolor() {
-    colorMain.value = colorInput.value;
-}
+const divNameInput = ref("")
+var changecolor = null
+// document.addEventListener("DOMContentLoaded", function() { 
+
+
+// function changemaincolor() {
+//     console.log(divNameInput.value)
+//     let mySelectedDiv = document.getElementById(divNameInput.value)
+//     mySelectedDiv.style.backgroundColor = colorInput.value
+// }
+// });
+
+
+onMounted(() => {
+    changecolor = () =>{
+        let mySelectedDiv = document.getElementById(divNameInput.value)
+        mySelectedDiv.style.background = colorInput.value
+    };
+
+})
+
+// this one not working the function to be written in this way
+// onMounted(() => {
+//     function changemaincolor (){
+//         let mySelectedDiv = document.getElementById(divNameInput.value)
+//         mySelectedDiv.style.background = colorInput.value
+//     };
+
+// })
 
 
 </script>
@@ -78,12 +105,14 @@ function changemaincolor() {
                 add To Main Txt
             </button>
             <br/>
-            <input v-model="divNameInput" type="text" placeholder="main/sidebar/container!">
+            <input v-model="divNameInput" type="text" placeholder="main/sidebar/navbar">
+            <br/>
+            only write one of : main / sidebar / navbar
             <br/>
             <input v-model="colorInput" type="text" placeholder="write color here!">
             <br/>
-            <button @click="changemaincolor">
-                change main color
+            <button @click="changecolor">
+                Do the magic!
             </button>
 
 
