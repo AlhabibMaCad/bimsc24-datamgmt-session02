@@ -1,6 +1,6 @@
 button {
-    background-color: #35bdd4;
-    border: #105499;
+    background-color: #cf4d4d;
+    border: #501717;
     color: black;
     padding: 10px 15px;
     text-align: center;
@@ -11,10 +11,11 @@ button {
     cursor: pointer;
     border-radius: 18px;
     transition: all 0.3s ease-in-out;
+    width: 96%;
   }
   
   button:hover {
-    background-color: #1e5dbb;
+    background-color: #bb1e1e;
   }
 
 

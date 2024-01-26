@@ -53,9 +53,12 @@ onMounted(() => {
         </div>
         <div id="logo">
             <img src="./profilepic.png" alt="profilepic">
-
         </div>
     </div>
+
+    <div id="main" class="container" > main
+            <br/>
+            {{mainTxt}} </div>
 
     <div id="flex">
         <div id="sidebar" class="container"> Sidebar 
@@ -92,9 +95,7 @@ onMounted(() => {
 
 
         </div>
-        <div id="main" class="container" > main
-            <br/>
-            {{mainTxt}} </div>
+        
     </div>
 
 
@@ -128,30 +129,19 @@ img{
 
 }
 
+
+.container{
+    width: 100%;
+    float: right;
+    border-width: 1px;
+}
+
 #navbar{
-
+    width: calc(100% - 260px);
     height: 50px;
-    border-color: red;
-
-
-}
-
-#flex{
-    
-    display: flex;
-    height: calc(100vh - 50px);
-}
-
-#sidebar{
-    
-    width:30%;
-    border-color: blue;
-
-}
-
-#main{
-    width:70%;
-    border-color: green;
+    border-color: rgb(77, 6, 6);
+    border-style: solid;
+    float: right;
 
 }
 
@@ -170,12 +160,37 @@ img{
 
 }
 
-.container{
 
-    border-style: dotted;
-    border-width: 1px;
+
+#main{
+    width: calc(100% - 260px);
+    border-color: rgb(134, 0, 0);
+    height: calc(100vh - 50px);
+    border-style: groove;
+
+
 
 }
+
+#flex{
+    width: 250px;
+    display: flex;
+    /* height: calc(100vh - 50px); */
+    height: calc(100vh);
+}
+
+#sidebar{
+    border-color: rgb(163, 19, 0);
+    border-width: thick;
+    border-style: dotted;
+    width: 250px;
+
+}
+
+
+
+
+
 
 .inputbox{
     width: 95%;
