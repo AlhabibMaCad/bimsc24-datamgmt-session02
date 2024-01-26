@@ -39,7 +39,6 @@ onMounted(() => {
 
 })
 
-
 </script>
 
 
@@ -142,7 +141,6 @@ img{
     border-color: rgb(77, 6, 6);
     border-style: solid;
     float: right;
-
 }
 
 #title{
@@ -157,9 +155,7 @@ img{
     height: 100%;
     float:right;
     text-align: right;
-
 }
-
 
 
 #main{
@@ -167,9 +163,6 @@ img{
     border-color: rgb(134, 0, 0);
     height: calc(100vh - 50px);
     border-style: groove;
-
-
-
 }
 
 #flex{
@@ -184,7 +177,6 @@ img{
     border-width: thick;
     border-style: dotted;
     width: 250px;
-
 }
 
 
@@ -194,8 +186,6 @@ img{
 
 .inputbox{
     width: 95%;
-
-
 }
 </style>
 
