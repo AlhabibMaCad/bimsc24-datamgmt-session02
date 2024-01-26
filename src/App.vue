@@ -6,7 +6,7 @@ import { onMounted, ref } from "vue" // you need this to use ref()
   const doc = document.documentElement;
   doc.style.background = "orange";
   doc.style.fontFamily = "monospace";
-  doc.style.fontSize = "15px";
+  
 
 function makeBackgroundWhite() {
     doc.style.background = "white";
@@ -22,8 +22,6 @@ const textInput = ref("");
 function addToMainTxt() {
    mainTxt.value += textInput.value;
 }
-
-
 
 // coloring 
 const colorMain = ref("")
@@ -53,12 +51,16 @@ onMounted(() => {
         <div id="title">
             Abdulrahman alhabib CBDM assignment 02
         </div>
+        <div id="logo">
+            <img src="./profilepic.png" alt="profilepic">
+
+        </div>
     </div>
 
     <div id="flex">
         <div id="sidebar" class="container"> Sidebar 
             <br/>
-            <h3> change color background! </h3>
+            <h3> change background color! </h3>
             <button @click="makeBackgroundWhite">
                 white background
             </button>
@@ -70,7 +72,7 @@ onMounted(() => {
             <br/>
             <br/>
             <h3> infinity text adding </h3>
-            <input v-model="textInput" type="text" placeholder="write here!">
+            <input class="inputbox" v-model="textInput" type="text" placeholder="write here!">
             <br/>
             <button @click="addToMainTxt">
                 add To Main Txt
@@ -78,11 +80,11 @@ onMounted(() => {
             <br/>
             <br/>
             <br/>
-            <h3>change specific box</h3>
+            <h3>change specific box color</h3>
             <h5>main / sidebar / navbar</h5>
-            <input v-model="divNameInput" type="text" placeholder="main/sidebar/navbar">
+            <input class="inputbox" v-model="divNameInput" type="text" placeholder="main/sidebar/navbar">
             <br/>
-            <input v-model="colorInput" type="text" placeholder="write color here!">
+            <input class="inputbox" v-model="colorInput" type="text" placeholder="write color here!">
             <br/>
             <button @click="changecolor">
                 Do the magic!
@@ -156,6 +158,8 @@ img{
 #title{
     width: 70%;
     float:left;
+    font-size: 18px;
+    font-weight: bolder;
 }
 
 #logo{
@@ -173,6 +177,11 @@ img{
 
 }
 
+.inputbox{
+    width: 95%;
+
+
+}
 </style>
 
 

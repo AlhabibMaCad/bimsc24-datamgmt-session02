@@ -1,6 +1,6 @@
 button {
-    background-color: #6fb8ff;
-    border: #6fb8ff;
+    background-color: #35bdd4;
+    border: #105499;
     color: black;
     padding: 10px 15px;
     text-align: center;
@@ -14,8 +14,7 @@ button {
   }
   
   button:hover {
-    background-color: #1E90FF;
-    box-shadow: 3px 3px black;
+    background-color: #1e5dbb;
   }
 
 
