@@ -4,17 +4,34 @@ import { onMounted, ref } from "vue" // you need this to use ref()
 
   //Change background color
   const doc = document.documentElement;
-  doc.style.background = "orange";
+  doc.style.background = "#00796B";
   doc.style.fontFamily = "monospace";
   
+  var makeBackgroundDark = null;
+  var makeBackgroundBright = null;
 
-function makeBackgroundWhite() {
-    doc.style.background = "white";
+
+onMounted(() => {
+    makeBackgroundDark= () =>{
+    doc.style.background = '#00796B';
+    let mainb = document.getElementById("main")
+    mainb.style.borderColor = '#80CBC4';
+    mainb.style.webkitTextFillColor = '#80CBC4';
+    let titleb = document.getElementById("title")
+    titleb.style.webkitTextFillColor = '#80CBC4';
+    
 }
-function makeBackgroundOrange() {
-    doc.style.background = "orange";
+ makeBackgroundBright = () =>{
+    doc.style.background = "#80CBC4";
+    let mainb = document.getElementById("main")
+    mainb.style.borderColor = '#00796B';
+    mainb.style.webkitTextFillColor = '#00796B';
+    let titleb = document.getElementById("title")
+    titleb.style.webkitTextFillColor = '#00796B';
 }
 
+
+})
 
 // main text adding 
 const mainTxt = ref("");
@@ -35,6 +52,7 @@ onMounted(() => {
     changecolor = () =>{
         let mySelectedDiv = document.getElementById(divNameInput.value)
         mySelectedDiv.style.background = colorInput.value
+        console.log(mySelectedDiv);
     };
 
 })
@@ -47,28 +65,30 @@ onMounted(() => {
 <template>
 
 <div id="navbar" class="container">  
-        <div id="title">
-            Abdulrahman alhabib CBDM assignment 02
+        <div id="title"  >
+            ABDULRAHMAN ALHABIB
+            <br/>
+            CBDM assignment 02
         </div>
         <div id="logo">
             <img src="./profilepic.png" alt="profilepic">
         </div>
     </div>
-
-    <div id="main" class="container" > main
+    <div id="maincontainer" >
+    <div id="main" class="container" >main
             <br/>
             {{mainTxt}} </div>
-
+        </div>
     <div id="flex">
         <div id="sidebar" class="container"> Sidebar 
             <br/>
             <h3> change background color! </h3>
-            <button @click="makeBackgroundWhite">
-                white background
+            <button @click="makeBackgroundDark">
+                dark background
             </button>
             <br/>
-            <button @click="makeBackgroundOrange">
-                orange background
+            <button @click="makeBackgroundBright">
+                bright background
             </button>
             <br/>
             <br/>
@@ -123,9 +143,9 @@ div{
 
 img{
 
-    height: 100%;
+    height: 85%;
     width: auto;
-
+margin: 5px;
 }
 
 
@@ -136,14 +156,16 @@ img{
 }
 
 #navbar{
-    width: calc(100% - 260px);
+    width: calc(98% - 250px);
     height: 50px;
     border-color: rgb(77, 6, 6);
-    border-style: solid;
+    border-style: hidden;
     float: right;
+    box-sizing: border-box;
 }
 
 #title{
+    color: #80CBC4;
     width: 70%;
     float:left;
     font-size: 18px;
@@ -157,12 +179,26 @@ img{
     text-align: right;
 }
 
+#maincontainer{
+    width: calc(98% - 250px);
+    height: calc(100vh - 50px );;
+    float:right;
+    border-color: aqua;
+    text-align: right;
 
+}
 #main{
-    width: calc(100% - 260px);
-    border-color: rgb(134, 0, 0);
-    height: calc(100vh - 50px);
+    width: 100%;
+    word-break:break-all;
+    border-color: #80CBC4;
+    color: #80CBC4;
+    font-size:xx-large;
+    height: calc(99%);
     border-style: groove;
+    border-radius: 20px;
+    text-align: center;
+margin-inline: 1%;
+
 }
 
 #flex{
@@ -173,10 +209,17 @@ img{
 }
 
 #sidebar{
-    border-color: rgb(163, 19, 0);
-    border-width: thick;
-    border-style: dotted;
+    border-color: #00796B;
+    border-width : thick;
+    border-style: solid;
     width: 250px;
+    border-radius: 20px;
+    background-color: rgb(204, 255, 238);
+    margin: 1%;
+    text-align: center;
+    box-sizing: border-box;
+
+
 }
 
 
@@ -186,6 +229,9 @@ img{
 
 .inputbox{
     width: 95%;
+    text-align: center;
+    margin: auto;
+    align-items: center;
 }
 </style>
 

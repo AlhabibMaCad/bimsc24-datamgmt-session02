@@ -1,21 +1,24 @@
 button {
-    background-color: #cf4d4d;
-    border: #501717;
+    background-color: #1DE9B6;
+    border: #000000;
+    border-width: thin;
     color: black;
-    padding: 10px 15px;
+    padding: 6px 15px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
+    font-size: 12px;
+    margin-top: 2px;
     cursor: pointer;
-    border-radius: 18px;
+    border-radius: 10px;
     transition: all 0.3s ease-in-out;
-    width: 96%;
+    width: 98%;
+    align-items: center;
+    font-family: 'monospace';
   }
   
   button:hover {
-    background-color: #bb1e1e;
+    background-color: #00BFA5;
   }
 
 
